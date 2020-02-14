@@ -18,13 +18,8 @@ function R_c = r_dark(qo,G,r_o,R)
         R_c = R;
     else
         R_c = bisection(f,r_o,R);
-%         try
-%             R_c = fzero(f,(R+r_o)/2);
-%         catch ME
-%             msg = sprintf('d:%f D:%f\n',r_o*100*2,R*100*2);
-%             warning(msg);
-%             R_c = bisection(f,r_o,R);
-%         end
+        % had fzero initially, but failed for some values
+        % and operated slower than bisection
     end
 end
 
