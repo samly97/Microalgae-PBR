@@ -16,27 +16,21 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         end
         
         % note: only fails at Cx_f and f_illum
-        try
-            % final dry-weight microalgae concentration (kg/m^3)
-            [z,Cx] = cell_kinetics(0.025,0.4,qo,spec_coeffs,X,d,D);
-            Cx_f = Cx(end);
+        
+        % final dry-weight microalgae concentration (kg/m^3)
+        [z,Cx] = cell_kinetics(0.025,0.4,qo,spec_coeffs,X,d,D);
+        Cx_f = Cx(end);
             
-            % average irradiance
-            Gq_avg_f = average_irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd
-            Gq = irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd irrad func
-            % initial value, Gq(r_o)
-            Gq_avg = qo*Gq_avg_f/Gq(d/100/2); % normalized irradiance
+        % average irradiance
+        Gq_avg_f = average_irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd
+        Gq = irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd irrad func
+        % initial value, Gq(r_o)
+        Gq_avg = qo*Gq_avg_f/Gq(d/100/2); % normalized irradiance
             
-            % fractional illumination
-            R_d = r_dark(qo,Gq,d/100/2,D/100/2);
-            f_illum = (R_d^2 - (d/100/2)^2)/((D/100/2)^2 - (d/100/2)^2);
-        catch ME
-            disp(ME.identifier)
-            msg = sprintf('d:%f D:%f i:%d',d,D,i);
-            warning([msg]);
-            Cx_f = NaN; 
-            f_illum = NaN;
-        end
+        % fractional illumination
+        R_d = r_dark(qo,Gq,d/100/2,D/100/2);
+        f_illum = (R_d^2 - (d/100/2)^2)/((D/100/2)^2 - (d/100/2)^2);
+       
         
         W = size_bulb(qo,d/2);
         data(i,:) = [d D Gq_avg f_illum W Cx_f];

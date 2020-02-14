@@ -15,7 +15,7 @@ addpath(genpath(Reactor))
 spec_coeff = ...
     atten_coefficients(100,3.2*10^-6,1.16,1400,[4;1;1.6],'N. Oleoabundans',false);
 
-[z,Cx] = cell_kinetics(0.025,0.4,220,spec_coeff,0.51,3.175,10.4775);
+% [z,Cx] = cell_kinetics(0.025,0.4,220,spec_coeff,0.51,3.175,10.4775);
 
 % % Permutations of pipes
 % pipes = get_pipes(0.125);
