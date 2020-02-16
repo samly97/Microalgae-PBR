@@ -18,8 +18,8 @@ spec_coeff = ...
 % [z,Cx] = cell_kinetics(0.025,0.4,220,spec_coeff,0.51,3.175,10.4775);
 
 % % Permutations of pipes
-% pipes = get_pipes(0.125);
-% data = sensitivity_test(220, spec_coeff, 0.51, 0.125);
+pipes = get_pipes(0.125);
+data = sensitivity_test(220, spec_coeff, 0.51, 0.125);
 
 % Future Tasks:
 %   - need to account for irradiance (W/m^2) to micro-mole conversion

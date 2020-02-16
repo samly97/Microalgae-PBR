@@ -2,8 +2,8 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
     pipes = get_pipes(thickness);
     tests = test_cases(pipes);
     
-    % d D G_avg_f frac_illum W Cx_final
-    data = zeros(size(tests,1),6);
+    % d D G_avg_f G_avg_f_ind frac_illum W Cx_final
+    data = zeros(size(tests,1),7);
     for i=1:size(tests,1)
         d = tests(i,1);
         D = tests(i,2);
@@ -26,18 +26,22 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         Gq = irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd irrad func
         % initial value, Gq(r_o)
         Gq_avg = qo*Gq_avg_f/Gq(d/100/2); % normalized irradiance
-            
+        
+        G_ind = average_irradiance_industry(qo,spec_coeffs,Cx_f,0,D);
+        
         % fractional illumination
         R_d = r_dark(qo,Gq,d/100/2,D/100/2);
         f_illum = (R_d^2 - (d/100/2)^2)/((D/100/2)^2 - (d/100/2)^2);
        
         
         W = size_bulb(qo,d/2);
-        data(i,:) = [d D Gq_avg f_illum W Cx_f];
+        data(i,:) = [d D Gq_avg G_ind f_illum W Cx_f];
+        
+        disp(i)
     end
     folder = results;
     data = array2table(data);
-    data.Properties.VariableNames(1:6) = {'d','D','G_avg','frac_illum','W','Cx'};
+    data.Properties.VariableNames(1:7) = {'d','D','G_avg','G_ind','frac_illum','W','Cx'};
     writetable(data,sprintf('%s/sensitivity_test.csv',folder));
 end
 
