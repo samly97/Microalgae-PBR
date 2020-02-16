@@ -47,5 +47,6 @@ function G_avg = avg_irrad_industry(qo, spec_coeffs, Cx, X, od)
         end
     end
     
-    G_avg = 2*qo*int;
+    A = pi*od^2/4;
+    G_avg = 2*qo*int/A;
 end

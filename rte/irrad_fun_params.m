@@ -21,20 +21,20 @@ end
 
 % Helper function: 1st term in numerator
 function num1 = calc_num1(X,a,d,L)
-    num1 = X*(1+a)*exp(-d*L);
-    num1 = (num1 - (1-a)*exp(-d*L));
+    num1 = X.*(1+a).*exp(-d.*L);
+    num1 = (num1 - (1-a).*exp(-d.*L));
 end
 
 % Helper Function: 1nd term in numerator
 function num2 = calc_num2(X,a,d,L)
-    num2 = (1+a)*exp(d*L);
-    num2 = (num2 - X*(1-a)*exp(d*L));
+    num2 = (1+a).*exp(d.*L);
+    num2 = (num2 - X.*(1-a).*exp(d.*L));
 end
 
 % Helper Function: Denominator
 function den = calc_denom(X,a,d,L)
-    den = (1+a)^2*exp(d*L);
-    den = den -(1-a)^2*exp(-d*L);
-    den = den -X*(1-a^2)*exp(d*L);
-    den = den + X*(1-a^2)*exp(-d*L);
+    den = (1+a).^2.*exp(d.*L);
+    den = den -(1-a).^2.*exp(-d.*L);
+    den = den -X.*(1-a.^2).*exp(d.*L);
+    den = den + X.*(1-a.^2).*exp(-d.*L);
 end

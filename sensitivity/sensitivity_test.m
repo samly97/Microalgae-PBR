@@ -27,7 +27,7 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         % initial value, Gq(r_o)
         Gq_avg = qo*Gq_avg_f/Gq(d/100/2); % normalized irradiance
         
-        G_ind = average_irradiance_industry(qo,spec_coeffs,Cx_f,0,D);
+        G_ind = avg_irrad_industry(qo,spec_coeffs,Cx_f,0,D);
         
         % fractional illumination
         R_d = r_dark(qo,Gq,d/100/2,D/100/2);
