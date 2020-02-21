@@ -2,7 +2,7 @@
 % PBRs in industry (light hits tubular reactor at a 90 deg angle).
 %
 % Inputs:
-%   qo: Source light intensity (mumol/m^2/s)
+%   qo: Source light intensity (mumol/m^2/s) 
 %   spec_coeffs: Attenuation coefficients. Order of Eabs, Esc, and b.
 %   Cx: Biomass concentration in PBR (kg/m^3)
 %   X: Reflectivity of outer wall coating

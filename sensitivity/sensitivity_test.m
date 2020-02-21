@@ -2,7 +2,7 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
     pipes = get_pipes(thickness);
     tests = test_cases(pipes);
     
-    % d D G_avg_f G_avg_f_ind frac_illum W Cx_final
+    % d D G_avg_f_ind frac_illum G_avg_f Cx_final Cx_avg
     data = zeros(size(tests,1),7);
     for i=1:size(tests,1)
         d = tests(i,1);
@@ -20,6 +20,7 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         % final dry-weight microalgae concentration (kg/m^3)
         [z,Cx] = cell_kinetics(0.025,0.4,qo,spec_coeffs,X,d,D);
         Cx_f = Cx(end);
+        Cx_avg = trapz(z,Cx)/z(end);
             
         % average irradiance
         Gq_avg_f = average_irradiance(spec_coeffs,Cx_f,X,d,D); % norm'd
@@ -33,28 +34,15 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         R_d = r_dark(qo,Gq,d/100/2,D/100/2);
         f_illum = (R_d^2 - (d/100/2)^2)/((D/100/2)^2 - (d/100/2)^2);
        
-        
-        W = size_bulb(qo,d/2);
-        data(i,:) = [d D Gq_avg G_ind f_illum W Cx_f];
+        data(i,:) = [d D G_ind f_illum Gq_avg Cx_f Cx_avg];
         
         disp(i)
     end
     folder = results;
     data = array2table(data);
-    data.Properties.VariableNames(1:7) = {'d','D','G_avg','G_ind','frac_illum','W','Cx'};
+    data.Properties.VariableNames(1:7) = {'d','D','G_ind','f_illum','G_avg','Cx_f','Cx_avg'};
     writetable(data,sprintf('%s/sensitivity_test.csv',folder));
 end
-
-%% Size lightbulb
-% needs to be updated
-function W = size_bulb(qo,r)
-    T8 = 1/2*2.54; % T8 light bulb radius (cm)
-    L = 6/3.2808; % T8 length in (m)
-    r_adj = (r-T8)/100;
-    f = 0.218; % photon to W/m^2 conversion factor
-    W = qo*f*(2*pi*r_adj*L); % inverse square law;
-end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Get Test Cases
 % Create data to run irradiance test at
