@@ -18,7 +18,7 @@ function data = sensitivity_test(qo, spec_coeffs, X, thickness)
         % note: only fails at Cx_f and f_illum
         
         % final dry-weight microalgae concentration (kg/m^3)
-        [z,Cx] = cell_kinetics(0.025,0.4,qo,spec_coeffs,X,d,D);
+        [z,Cx] = cell_kinetics(2000*1.5/24/3600,1.5,qo,spec_coeffs,X,d,D);
         Cx_f = Cx(end);
         Cx_avg = trapz(z,Cx)/z(end);
             

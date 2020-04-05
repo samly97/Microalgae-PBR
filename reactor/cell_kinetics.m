@@ -13,7 +13,7 @@
 % Outputs:
 %   z: reactor length profile (m)
 %   Cx: dry-cell microalgae concentration profile (kg/m^3)
-function [z,Cx] = cell_kinetics(u,D,qo,spec_coeffs,X,id,od)
+function [z,Cx] = cell_kinetics(u,D,qo,spec_coeffs,X,id,od,Cx_r)
     global r_o R q
     r_o = id/100/2;
     R = od/100/2;
@@ -22,7 +22,7 @@ function [z,Cx] = cell_kinetics(u,D,qo,spec_coeffs,X,id,od)
     
     L = reactor_length(u,D);
     z_span = [0 L];
-    Cx_o = 10^-3;
+    Cx_o = Cx_r;
     [z,Cx] = ode45(@(z,Cx) dCxdz(z,Cx,qo,spec_coeffs,X),z_span,Cx_o);
 end
 
