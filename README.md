@@ -7,7 +7,7 @@ In this project, microalgae growth was simulated in an annular photobioreactor u
 - Plots a concentration profile (microalgae vs. reactor length)
 
 ### Demo
-![growthprofile](pictures/Growth in Reactor - Concentration Profile.png)
+![concentrationprofile](pictures/concentrationprofile.png)
 
 ## References
 [Mie theory code](http://scatterlib.wikidot.com/mie) by Krzszystof Markowicz home page at IGf UW
