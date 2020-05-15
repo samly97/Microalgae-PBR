@@ -5,6 +5,11 @@ In this project, microalgae growth was simulated in an annular photobioreactor u
 
 ## Features:
 - Plots a concentration profile (microalgae vs. reactor length)
+- Plots for visualizing microalgae light attenuation characteristics
+- Sensitivity analysis for the effects of geometry (size) on growth for 1891 configurations
+- Plots to visualize light irradiance profile (irradiance vs. reactor length)
+- Plots to visualize the maximum concentration attainable for a given reactor geometry
+- Plots to compare the average light irradiance of the annular photobioreactor vs. a more "traditional design"
 
 ### Demo
 ![concentrationprofile](pictures/concentrationprofile.png)
