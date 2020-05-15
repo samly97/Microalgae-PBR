@@ -1,0 +1,3 @@
+# ignore csv - this folder is a placeholder for the csv files
+# containing the sensitivity analysis
+*.csv

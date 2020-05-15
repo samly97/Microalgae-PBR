@@ -1,0 +1,3 @@
+# ignore everything - this folder is a placeholder for plot of the
+# attenuation coefficients and the corresponding csv file
+*.csv
