@@ -1,2 +1,4 @@
 # Microalgae-PBR
-# Mie theory code by Krzszystof Markowicz home page at IGf UW
+
+## References
+[Mie theory code](http://scatterlib.wikidot.com/mie) by Krzszystof Markowicz home page at IGf UW
