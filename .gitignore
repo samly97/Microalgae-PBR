@@ -1,5 +1,3 @@
 # ignore following patterns
-*.csv
-*.png
 *.xls*
 .DS_Store
