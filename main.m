@@ -23,7 +23,7 @@ Mx_r = 1022.0112; % dry microalgae recycle (kg/day)
 Qx_req = 4667.653521; % dry microalgae required (kg/day)
 
 % sensitivity analysis
-% data = sensitivity_test(220, spec_coeff, X, 0.125);
+%data = sensitivity_test(220, spec_coeff, X, 0.125);
 
 % find u,D which minimizes costs
 % data = test_dilution_rate(L,0.6,5,Mx_r,Qx_req,X,ID,OD,spec_coeff);
