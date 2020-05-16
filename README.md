@@ -40,6 +40,14 @@ For a given geometry, there is a maximum attainable concentration. This figure a
 ### Design Comparison
 ![designcompare](pictures/designcompare.png)
 
+The aim of the project was to create an improved photobioreactor design. As light is the main nutrient for microalgae growth, an improved design must have better light irradiance performance than current designs.
+
+The improved design has the microalgae culture flow through an annular pipe where the light source is the middle.
+
+The traditional design is a standard cylindrical pipe that has its light source opposite of it.
+
+The above figure compares light irradiance performance between both design with increasing microalgae concentration. The annular design is shown to be an improved design as the average light irradiance is higher than the traditional design.
+
 ## Demo
 
 ## References
