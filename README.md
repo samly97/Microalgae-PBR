@@ -48,7 +48,5 @@ The traditional design is a standard cylindrical pipe that has its light source 
 
 The above figure compares light irradiance performance between both design with increasing microalgae concentration. The annular design is shown to be an improved design as the average light irradiance is higher than the traditional design.
 
-## Demo
-
 ## References
 [Mie theory code](http://scatterlib.wikidot.com/mie) by Krzszystof Markowicz home page at IGf UW
