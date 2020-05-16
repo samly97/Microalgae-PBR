@@ -1,5 +1,5 @@
 # Microalgae Growth Simulation
-Due to increasing fossil fuel demands there is a need to find sustainable energy sources as a replacement. Lipids could be extracted from microalgae to produce biodiesel.
+Due to increasing fossil fuel demands there is a need to find sustainable energy sources as replacements. Lipids could be extracted from microalgae to produce biodiesel.
 
 In this project, microalgae growth was simulated in an annular photobioreactor using light as its main nutrient.
 
@@ -14,14 +14,14 @@ In this project, microalgae growth was simulated in an annular photobioreactor u
 ### Concentration Profile
 ![concentrationprofile](pictures/concentrationprofile.png)
 
-From the figure above, the concentration of *Neochloris oleoabundans* (a straing of microalgae) grows from 0.01 kg/cum to roughly 0.058 kg/cum on a dry-mass basis. The length of the reactor is 5 km long.
+From the figure above, the concentration of *Neochloris oleoabundans* (a strain of microalgae) grows from 0.01 kg/cum to roughly 0.058 kg/cum on a dry-mass basis. The length of the reactor is 5 km long.
 
 ### Microalgae Light Attenuation Characteristics
-![absorbscaplot](pictures/absscaplot.png)
+![absorbscaplot](pictures/absscaplot.png = 560x420)
 
-The above figure shows the relationship between absorption and scattering efficiencies against wavelength of light. 'mie.m' determines the absorption and scattering fractions as per [(Pottier et. al. 2005)](https://onlinelibrary.wiley.com/doi/abs/10.1002/bit.20475).
+The above figure shows the relationship between absorption and scattering efficiencies against wavelength of light. `mie.m` determines the absorption and scattering fractions as per [(Pottier et. al. 2005)](https://onlinelibrary.wiley.com/doi/abs/10.1002/bit.20475).
 
-![backscaplot](pictures/backscaplot.png)
+![backscaplot](pictures/backscaplot.png = 560x420)
 
 This figure shows the relationship of backscatter fraction against wavelength of light.
 
