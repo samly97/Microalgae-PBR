@@ -1,3 +1,6 @@
+% Calculates the volumetric productivity of the given u,D arrays. The
+% optimal configuration maximizes the productivity.
+%
 % Inputs:
 %   L - length of photobioreactor (m)
 %   D_o - initial dilution rate (1/day)
@@ -8,7 +11,9 @@
 %   ID - inner diameter of reactor (cm)
 %   OD - outer diameter of reactor (cm)
 %   spec_coeffs - spectral coefficients from Lorenz-Mie
-
+%
+% Outputs:
+%   data - columns in order of: u, D, Cxro, % illum, Cxf
 function data = test_dilution_rate(L,D_o,D_f,Mx_r,Qx_req,X,ID,OD,spec_coeffs)
     D = logspace(log10(D_o),log10(D_f),10);
     %D = linspace(D_o,D_f,25);
